@@ -1,0 +1,25 @@
+<!-- base.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.15/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <nav class="bg-gray-800">
+        <div class="container mx-auto px-6 py-3">
+            <div class="flex items-center justify-between">
+                <a class="text-xl font-bold text-white" href="/">Image Compression</a>
+                <div class="flex">
+                    <a class="text-gray-300 hover:text-white px-3 py-2 rounded-md" href="/">Home</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mx-auto px-5 py-24">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>

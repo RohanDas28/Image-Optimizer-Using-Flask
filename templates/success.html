@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}
+Compression Successful
+{% endblock %}
+
+{% block content %}
+<div class="max-w-xl mx-auto bg-white p-6 rounded-lg shadow-md">
+    <h1 class="text-2xl font-bold mb-4">Compression Successful</h1>
+    <div class="mb-6">
+        <h2 class="text-lg font-bold">Original Image:</h2>
+        <img src="{{ url_for('uploaded_file', filename=original_filename) }}" alt="Original Image" class="my-2 rounded-lg shadow-md h-48 object-contain">
+        <p class="my-2">Original File Size: {{ original_filesize }}</p>
+    </div>
+    <div class="mb-6">
+        <h2 class="text-lg font-bold">Compressed Image:</h2>
+        <img src="{{ url_for('compressed_file', filename=compressed_filename) }}" alt="Compressed Image" class="my-2 rounded-lg shadow-md h-48 object-contain">
+        <p class="my-2">Compressed File Size: {{ compressed_filesize }}</p>
+    </div>
+    <div class="mb-4">
+        <a href="{{ url_for('download_compressed', filename=compressed_filename) }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded inline-block">
+            Download Compressed Image
+        </a>
+    </div>
+</div>
+{% endblock %}
